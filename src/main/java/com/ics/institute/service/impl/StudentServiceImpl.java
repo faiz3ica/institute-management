@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.ics.institute.model.student.Student;
+import com.ics.institute.repository.AddressRepo;
 import com.ics.institute.repository.StudentRepo;
 import com.ics.institute.service.StudentService;
 
@@ -16,8 +17,12 @@ public class StudentServiceImpl implements StudentService {
 	@Autowired
 	StudentRepo studentRepo;
 
+	@Autowired
+	AddressRepo addressRepo;
+
 	@Override
 	public Student saveStudent(Student student) {
+		addressRepo.saveAll(student.getAddress());
 		return studentRepo.save(student);
 	}
 

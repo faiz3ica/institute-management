@@ -1,8 +1,11 @@
 package com.ics.institute.model.student;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -11,12 +14,14 @@ import lombok.Data;
 public class Student {
 	@Id
 	private int rollNo;
-	@Column(name="student_name")
+	@Column(name = "student_name")
 	private String studentName;
-	@Column(name="father_name")
+	@Column(name = "father_name")
 	private String fatherName;
-	@Column(name="mother_name")
+	@Column(name = "mother_name")
 	private String motherName;
-	@Column(name="student_age")
+	@Column(name = "student_age")
 	private int studentAge;
+	@OneToMany
+	List<Address> address;
 }
