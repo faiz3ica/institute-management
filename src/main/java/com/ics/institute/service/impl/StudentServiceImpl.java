@@ -3,10 +3,12 @@ package com.ics.institute.service.impl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.ics.institute.model.student.Address;
 import com.ics.institute.model.student.Student;
 import com.ics.institute.repository.AddressRepo;
 import com.ics.institute.repository.StudentRepo;
@@ -22,8 +24,8 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student saveStudent(Student student) {
-		addressRepo.saveAll(student.getAddress());
-		return studentRepo.save(student);
+		Student result = studentRepo.save(student);
+		return result;
 	}
 
 	@Override

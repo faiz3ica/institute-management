@@ -22,6 +22,6 @@ public class Student {
 	private String motherName;
 	@Column(name = "student_age")
 	private int studentAge;
-	@OneToMany
+	@OneToMany(mappedBy = "student")
 	List<Address> address;
 }

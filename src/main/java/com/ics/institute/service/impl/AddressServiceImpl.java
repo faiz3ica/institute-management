@@ -6,14 +6,15 @@ import org.springframework.stereotype.Component;
 import com.ics.institute.model.student.Address;
 import com.ics.institute.repository.AddressRepo;
 import com.ics.institute.service.AddressService;
+
 @Component
 public class AddressServiceImpl implements AddressService {
 	@Autowired
 	AddressRepo addressRepo;
+
 	@Override
-	public Address saveAddress() {
-		// TODO Auto-generated method stub
-		return null;
+	public Address saveAddress(Address address) {
+		return addressRepo.save(address);
 	}
 
 	@Override

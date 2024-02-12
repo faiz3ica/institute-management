@@ -6,6 +6,6 @@ import com.ics.institute.model.student.Address;
 
 @Service
 public interface AddressService {
-	public Address saveAddress();
+	public Address saveAddress(Address address);
 	public Address getAddress(Integer addressId);
 }

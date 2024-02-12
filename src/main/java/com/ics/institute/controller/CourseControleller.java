@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ics.institute.model.course.Course;
 
 @RestController
-@RequestMapping(value="/course")
+@RequestMapping("/course")
 public class CourseControleller {
 	@GetMapping(value="/get")
 	public Course getCourse(@RequestParam(name="courseId") Integer courseId) {
