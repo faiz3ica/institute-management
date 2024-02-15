@@ -24,6 +24,7 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student saveStudent(Student student) {
+		addressRepo.saveAll(student.getAddress());
 		Student result = studentRepo.save(student);
 		return result;
 	}
